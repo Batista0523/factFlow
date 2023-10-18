@@ -3,29 +3,94 @@ const transactions = [
     id: "1",
     item_name: "Income",
     date: "10-17-2023",
+    amount: 200,
     from: "Employer",
     category: "Income",
+    spends: false
   },
 
   {
     id: "2",
     item_name: "Grocery",
     date: "10-22-2023",
+    amount: 60,
     from: "Grocery Store",
     category: "Food",
+    spends: true,
   },
   {
     id: "3",
     item_name: "SHELL",
     date: "10-25-2023",
+    amount: 35,
     from: "Shell Gas Station",
     category: "Gas",
+    spends: true,
   },
 
   {
-    
-  }
+    id: "4",
+    item_name: "Apple Music",
+    date: "09-23-2023",
+    amount: 23,
+    from: "Apple",
+    category: "Membership",
+    spends: true,
+  },
+  {
+    id: "5",
+    item_name: "Ride",
+    date: "10-23-2023",
+    amount: 500,
+    from: "Uber",
+    category: "Income",
+    spends: false,
+  },
+  {
+    id: "6",
+    item_name: "Monthly Saving",
+    date: "10-30-2023",
+    amount: 2000,
+    from: "Bank Of America",
+    category: "Saving",
+    spends: false,
+  },
+  {
+    id: "7",
+    item_name: "Dog Vaccine",
+    date: "09-20-2023",
+    amount: 16,
+    from: "Your Pets Store",
+    category: "Pets",
+    spends: true,
+  },
+  {
+    id: "8",
+    item_name: "Vacation to DR",
+    date: "08-20-2023",
+    amount: 1230,
+    from: "Delta airline",
+    category: "Flight",
+    spends: true,
+  },
+  {
+    id: "9",
+    item_name: "Baseball Game",
+    date: "07-29-2023",
+    amount: 56,
+    from: "Yankees Stadium",
+    category: "Seats Tickets",
+    spends: true,
+  },
+  {
+    id: "10",
+    item_name: "Movie",
+    date: "09-20-2023",
+    amount: 23,
+    from: "Movie Teather",
+    category: "Movie Tickets",
+    spends: true,
+  },
 ];
-
 
 module.exports = transactions;
