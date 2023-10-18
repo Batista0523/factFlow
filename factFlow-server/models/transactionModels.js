@@ -6,7 +6,7 @@ const transactions = [
     amount: 200,
     from: "Employer",
     category: "Income",
-    spends: false
+    spends: false,
   },
 
   {
