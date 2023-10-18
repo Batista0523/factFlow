@@ -6,7 +6,7 @@ const transactions = [
     amount: 200,
     from: "Employer",
     category: "Income",
-    spends: false,
+    income: false,
   },
 
   {
@@ -16,7 +16,7 @@ const transactions = [
     amount: 60,
     from: "Grocery Store",
     category: "Food",
-    spends: true,
+    income: true,
   },
   {
     id: "3",
@@ -25,7 +25,7 @@ const transactions = [
     amount: 35,
     from: "Shell Gas Station",
     category: "Gas",
-    spends: true,
+    income: true,
   },
 
   {
@@ -35,7 +35,7 @@ const transactions = [
     amount: 23,
     from: "Apple",
     category: "Membership",
-    spends: true,
+    income: true,
   },
   {
     id: "5",
@@ -44,7 +44,7 @@ const transactions = [
     amount: 500,
     from: "Uber",
     category: "Income",
-    spends: false,
+    income: false,
   },
   {
     id: "6",
@@ -53,7 +53,7 @@ const transactions = [
     amount: 2000,
     from: "Bank Of America",
     category: "Saving",
-    spends: false,
+    income: false,
   },
   {
     id: "7",
@@ -62,7 +62,7 @@ const transactions = [
     amount: 16,
     from: "Your Pets Store",
     category: "Pets",
-    spends: true,
+    income: true,
   },
   {
     id: "8",
@@ -71,7 +71,7 @@ const transactions = [
     amount: 1230,
     from: "Delta airline",
     category: "Flight",
-    spends: true,
+    income: true,
   },
   {
     id: "9",
@@ -80,7 +80,7 @@ const transactions = [
     amount: 56,
     from: "Yankees Stadium",
     category: "Seats Tickets",
-    spends: true,
+    income: true,
   },
   {
     id: "10",
@@ -89,7 +89,7 @@ const transactions = [
     amount: 23,
     from: "Movie Teather",
     category: "Movie Tickets",
-    spends: true,
+    income: true,
   },
 ];
 
