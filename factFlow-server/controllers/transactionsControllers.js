@@ -65,11 +65,14 @@ const deleteTransaction = (req, res) => {
   const transactionIndex = transactions.findIndex((trans) => trans.id === id);
 
   if (transactionIndex === -1) {
-    return res.status(404).json({ message: 'Transaction not found' });
+    return res.status(404).json({ message: "Transaction not found" });
   }
 
-  const deletedTransaction = transactions.splice(transactionIndex,1);
-  res.json({message : 'Transacation Deleted', transactions: deletedTransaction})
+  const deletedTransaction = transactions.splice(transactionIndex, 1);
+  res.json({
+    message: "Transacation Deleted",
+    transactions: deletedTransaction,
+  });
 };
 
 module.exports = {
