@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import "./navbar.css";
+import "bootstrap/dist/css/bootstrap.min.css"; 
+
 const NavBar = () => {
   return (
-    <div className="navbar">
-      <div>
-
-      <Link to="/">
-        <h1 className="nav-branch">Fact Flow</h1>
-      </Link>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container">
+        <Link to="/" className="navbar-brand">
+          Fact Flow
+        </Link>
+        <Link to="/create-resource">
+          <button className="btn btn-primary">Create New Resource</button>
+        </Link>
       </div>
-      <Link to="create-resource">
-        <button className="create-btn">Create New Resource</button>
-      </Link>
-    </div>
+    </nav>
   );
 };
 
