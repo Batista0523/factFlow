@@ -1,21 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const IndexPage = ({ transactions }) => {
 
-  console.log(transactions)
-  let totalAmount = 0; 
+ console.log(transactions.transactions)
+  let totalAmount = 0;
 
   if (Array.isArray(transactions) && transactions.length > 0) {
-    totalAmount = transactions.reduce((total, transaction) => total + transaction.amount, 0);
-  }
+    totalAmount = transactions.reduce(
+      (total, transaction) => total + transaction.amount,
+      0
+    );
+  };
 
   const getTotalColor = () => {
     if (totalAmount > 100) {
-      return 'green';
+      return "green";
     } else if (totalAmount >= 0) {
-      return 'yellow';
+      return "yellow";
     } else {
-      return 'red';
+      return "red";
     }
   };
 
@@ -24,11 +27,11 @@ const IndexPage = ({ transactions }) => {
       <h1>Transactions</h1>
       <p>Welcome to Fact-Flow</p>
       <p>Total: {totalAmount}</p>
-      {Array.isArray(transactions) && transactions.length > 0 ? (
+       {transactions.length > 0 ? (
         <ul>
           {transactions.map((transaction) => (
             <li key={transaction.id}>
-               <p>Item name: {transaction.item_name}</p>
+              <p>Item name: {transaction.item_name}</p>
               <p>Amount: {transaction.amount}</p>
               <p>Date: {transaction.date}</p>
               <p>Category: {transaction.category}</p>
@@ -45,6 +48,5 @@ const IndexPage = ({ transactions }) => {
     </div>
   );
 };
-
 
 export default IndexPage;
