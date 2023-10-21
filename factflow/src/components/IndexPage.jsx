@@ -2,28 +2,37 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const IndexPage = ({ transactions }) => {
-  const totalAmount = transactions.reduce(
-    (total, transaction) => total + transaction.amount,
-    0
-  );
+  const totalExpense = transactions
+    .filter((transaction) => !transaction.income)
+    .reduce((total, transaction) => total + transaction.amount, 0);
 
-  const getTotalColor = () => {
-    if (totalAmount > 100) {
-      return "bg-success";
-    } else if (totalAmount >= 0) {
-      return "bg-warning";
-    } else {
+  const totalIncome = transactions
+    .filter((transaction) => transaction.income)
+    .reduce((total, transaction) => total + transaction.amount, 0);
+
+  const getTotalColor = (isExpenses) => {
+    if (isExpenses && totalExpense > totalIncome) {
       return "bg-danger";
+    } else if (!isExpenses && totalIncome > totalExpense) {
+      return "bg-success";
+    } else {
+      return "bg-warning";
     }
   };
 
   return (
     <div className="container mt-4">
       <h1>Resource List</h1>
-      <div className={`card ${getTotalColor()} text-white`}>
+      <div className={`card ${getTotalColor(false)} text-white`}>
         <div className="card-body">
-          <h5 className="card-title">Total Amount</h5>
-          <p>{totalAmount}</p>
+          <h5 className="card-title">Total Income</h5>
+          <p>{totalIncome}</p>
+        </div>
+      </div>
+      <div className={`card ${getTotalColor(true)} mt-3`}>
+        <div className="card-body">
+          <h5 className="card-title">Total Expenses</h5>
+          <p>{totalExpense}</p>
         </div>
       </div>
       {transactions.length > 0 ? (
@@ -40,7 +49,6 @@ const IndexPage = ({ transactions }) => {
                     >
                       View Details
                     </Link>
-
                     <div>
                       <button className="btn btn-warning mx-2">Edit</button>
                       <button className="btn btn-danger">Delete</button>
