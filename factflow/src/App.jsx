@@ -71,6 +71,39 @@ function App() {
         console.error("Error deleting transaction:", error);
       });
   };
+  function updateAndSetTransactions(updatedTransaction) {
+    const updatedTransactions = transactions.map((t) =>
+      t.id === updatedTransaction.id ? updatedTransaction : t
+    );
+    setTransactions(updatedTransactions);
+  }
+
+  const updateTransaction = (id, updatedTransaction) => {
+    fetch(`http://localhost:3000/transactions/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(updatedTransaction),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const updatedTransactions = transactions.map((t) =>
+          t.id === id ? data.transaction : t
+        );
+        setTransactions(updatedTransactions);
+
+        setTransactionToEdit(null);
+      })
+      .catch((error) => {
+        console.error("Error updating transaction", error);
+      });
+  };
 
   return (
     <>
@@ -78,7 +111,16 @@ function App() {
         <Router>
           <NavBar />
           <Routes>
-            <Route path="/edit-form" element={<EditPage/>}/>
+            <Route
+              path="/edit-form/:id"
+              element={
+                <EditPage
+                  transactions={transactions}
+                  onUpdateTransaction={updateTransaction}
+                  updateTransactions={updateAndSetTransactions}
+                />
+              }
+            />
             <Route
               path="/"
               element={
@@ -90,7 +132,12 @@ function App() {
             />
             <Route
               path="/create-resource"
-              element={<CreatePage createTransaction={createTransaction} />}
+              element={
+                <CreatePage
+                  createTransaction={createTransaction}
+                  updateTransactions={updateAndSetTransactions}
+                />
+              }
             />
             <Route
               path="/show/:id"

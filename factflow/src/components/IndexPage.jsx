@@ -2,15 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const IndexPage = ({ transactions, onDeleteTransaction }) => {
-  const total = transactions.reduce((total, transaction) => total + transaction.amount, 0);
+  const total = transactions.reduce(
+    (total, transaction) => total + parseFloat(transaction.amount),
+    0
+  );
 
   const getTotalColor = () => {
     if (total > 100) {
-      return "bg-success"; 
+      return "bg-success";
     } else if (total >= 0) {
-      return "bg-warning"; 
+      return "bg-warning";
     } else {
-      return "bg-danger"; 
+      return "bg-danger";
     }
   };
 
@@ -21,7 +24,7 @@ const IndexPage = ({ transactions, onDeleteTransaction }) => {
   return (
     <div className="container mt-4">
       <h1>Your Fact Flow</h1>
-      <h2>Transactions List</h2> 
+      <h2>Transactions List</h2>
       <div className={`card text-white ${getTotalColor()}`}>
         <div className="card-body">
           <h5 className="card-title">Total</h5>
@@ -36,11 +39,13 @@ const IndexPage = ({ transactions, onDeleteTransaction }) => {
                 <div className="card-body">
                   <h5 className="card-title">{transaction.item_name}</h5>
                   <div className="d-flex justify-content-between align-items-center">
-                    <Link to={`/show/${transaction.id}`} className="btn btn-primary">
+                    <Link
+                      to={`/show/${transaction.id}`}
+                      className="btn btn-primary"
+                    >
                       View Details
                     </Link>
                     <div>
-                     
                       <button
                         className="btn btn-danger"
                         onClick={() => handleDelete(transaction.id)}

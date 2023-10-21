@@ -30,7 +30,7 @@ const ShowPage = ({ transactions }) => {
             Type: {transaction.income ? "Income" : "Expense"}
           </p>
           <div>
-            <Link to="/edit-form">
+            <Link to={`/edit-form/${transaction.id}`}>
               <button className="btn btn-warning mx-2">Edit</button>
             </Link>
           </div>
