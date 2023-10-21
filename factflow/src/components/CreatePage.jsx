@@ -1,23 +1,36 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const CreatePage = () => {
+const CreatePage = ({ createTransaction, updateTotals }) => {
   const [itemName, setItemName] = useState("");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("");
   const [from, setFrom] = useState("");
   const [amount, setAmount] = useState("");
-  const [income, setIncome] = useState("");
+  const [income, setIncome] = useState(false);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
+    const newTransaction = {
+      item_name: itemName,
+      date,
+      category,
+      from,
+      amount: parseFloat(amount),
+      income,
+    };
+
+    createTransaction(newTransaction);
+    updateTotals(newTransaction);
+
+   
     setItemName("");
     setDate("");
     setCategory("");
     setFrom("");
     setAmount("");
-    setIncome("");
+    setIncome(false);
   };
 
   return (

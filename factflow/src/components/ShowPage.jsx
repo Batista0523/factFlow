@@ -27,6 +27,7 @@ const ShowPage = ({ transactions }) => {
           <p className="card-text">Date: {transaction.date}</p>
           <p className="card-text">Category: {transaction.category}</p>
           <p className="card-text">From: {transaction.from}</p>
+          <p className="card-text">Amount : {transaction.amount}</p>
           <p className="card-text">
             Type: {transaction.income ? "Income" : "Expense"}
           </p>
