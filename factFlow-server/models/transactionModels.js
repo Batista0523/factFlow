@@ -13,7 +13,7 @@ const transactions = [
     id: "2",
     item_name: "Grocery",
     date: "10-22-2023",
-    amount: 60,
+    amount: 80,
     from: "Grocery Store",
     category: "Food",
     income: false,

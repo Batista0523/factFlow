@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 
-const ShowPage = ({ transactions }) => {
+const ShowPage = ({ transactions, onDeleteTransaction }) => {
   const { id } = useParams();
   const transaction = transactions.find((t) => t.id.toString() === id);
 
@@ -15,6 +15,9 @@ const ShowPage = ({ transactions }) => {
       </div>
     );
   }
+  const handleDelete = (id) => {
+    onDeleteTransaction(id);
+  };
 
   return (
     <div className="container mt-4">
@@ -29,10 +32,16 @@ const ShowPage = ({ transactions }) => {
           <p className="card-text">
             Type: {transaction.income ? "Income" : "Expense"}
           </p>
-          <div>
+          <div className="btn-group">
             <Link to={`/edit-form/${transaction.id}`}>
-              <button className="btn btn-warning mx-2">Edit</button>
+              <button className="btn btn-warning mr-2">Edit</button>
             </Link>
+            <button
+              className="btn btn-danger"
+              onClick={() => handleDelete(transaction.id)}
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>

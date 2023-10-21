@@ -123,12 +123,7 @@ function App() {
             />
             <Route
               path="/"
-              element={
-                <IndexPage
-                  transactions={transactions}
-                  onDeleteTransaction={deleteTransaction}
-                />
-              }
+              element={<IndexPage transactions={transactions} />}
             />
             <Route
               path="/create-resource"
@@ -141,7 +136,12 @@ function App() {
             />
             <Route
               path="/show/:id"
-              element={<ShowPage transactions={transactions} />}
+              element={
+                <ShowPage
+                  transactions={transactions}
+                  onDeleteTransaction={deleteTransaction}
+                />
+              }
             />
           </Routes>
         </Router>
