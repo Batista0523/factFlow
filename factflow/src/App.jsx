@@ -4,9 +4,29 @@ import CreatePage from "./components/CreatePage";
 import NavBar from "./components/NavBar";
 import IndexPage from "./components/IndexPage";
 import ShowPage from "./components/ShowPage";
+import EditPage from "./components/EditPage";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
+
+  const fetchTransactions = () => {
+    const apiUrl = "http://localhost:3000/transactions";
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setTransactions(data.transactions);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  };
+
+  useEffect(() => {
+    fetchTransactions();
+  }, []);
 
   const createTransaction = (newTransaction) => {
     fetch("http://localhost:3000/transactions", {
@@ -52,49 +72,25 @@ function App() {
       });
   };
 
-  const fetchTransactions = () => {
-    const apiUrl = "http://localhost:3000/transactions";
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setTransactions(data.transactions);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  };
-
-  useEffect(() => {
-    fetchTransactions();
-  }, []);
-
   return (
     <>
       <div>
         <Router>
           <NavBar />
           <Routes>
+            <Route path="/edit-form" element={<EditPage/>}/>
             <Route
               path="/"
               element={
                 <IndexPage
                   transactions={transactions}
                   onDeleteTransaction={deleteTransaction}
-                 
                 />
               }
             />
             <Route
               path="/create-resource"
-              element={
-                <CreatePage
-                  createTransaction={createTransaction}
-                 
-                />
-              }
+              element={<CreatePage createTransaction={createTransaction} />}
             />
             <Route
               path="/show/:id"

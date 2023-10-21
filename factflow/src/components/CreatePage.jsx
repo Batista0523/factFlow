@@ -24,7 +24,6 @@ const CreatePage = ({ createTransaction, updateTotals }) => {
     createTransaction(newTransaction);
     updateTotals(newTransaction);
 
-   
     setItemName("");
     setDate("");
     setCategory("");

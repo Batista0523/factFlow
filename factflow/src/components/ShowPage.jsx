@@ -8,9 +8,7 @@ const ShowPage = ({ transactions }) => {
   if (!transaction) {
     return (
       <div className="container mt-4">
-        <div className="alert alert-danger">
-          Transaction not found.
-        </div>
+        <div className="alert alert-danger">Transaction not found.</div>
         <Link to="/" className="btn btn-primary">
           Back to Index
         </Link>
@@ -31,6 +29,11 @@ const ShowPage = ({ transactions }) => {
           <p className="card-text">
             Type: {transaction.income ? "Income" : "Expense"}
           </p>
+          <div>
+            <Link to="/edit-form">
+              <button className="btn btn-warning mx-2">Edit</button>
+            </Link>
+          </div>
         </div>
       </div>
       <Link to="/" className="btn btn-primary mt-3">
