@@ -8,7 +8,7 @@ const transactions = [
     category: "Income",
     income: true,
   },
-
+ 
   {
     id: "2",
     item_name: "Grocery",
@@ -68,7 +68,7 @@ const transactions = [
     id: "8",
     item_name: "Vacation to DR",
     date: "08-20-2023",
-    amount: 1230,
+    amount: 1000,
     from: "Delta airline",
     category: "Flight",
     income: false,
