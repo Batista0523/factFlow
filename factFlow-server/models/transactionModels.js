@@ -3,7 +3,7 @@ const transactions = [
     id: "1",
     item_name: "Income",
     date: "10-17-2023",
-    amount: 200,
+    amount: 40,
     from: "Employer",
     category: "Income",
     income: true,
@@ -20,7 +20,7 @@ const transactions = [
   },
   {
     id: "3",
-    item_name: "SHELL",
+    item_name: "Shell",
     date: "10-25-2023",
     amount: 35,
     from: "Shell Gas Station",

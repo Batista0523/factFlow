@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Calculate = () => {
+const HomePage = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Calculate = () => {
     );
 }
 
-export default Calculate;
+export default HomePage;
