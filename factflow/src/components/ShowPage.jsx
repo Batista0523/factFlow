@@ -2,8 +2,8 @@ import React from 'react';
 
 const ShowPage = () => {
     return (
-        <div>
-            
+        <div className='resources'>
+            hello
         </div>
     );
 }
