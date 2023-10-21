@@ -40,12 +40,7 @@ const IndexPage = ({ transactions, onDeleteTransaction }) => {
                       View Details
                     </Link>
                     <div>
-                      <button
-                        className="btn btn-warning mx-2"
-                        onClick={() => handleEdit(transaction.id)}
-                      >
-                        Edit
-                      </button>
+                     
                       <button
                         className="btn btn-danger"
                         onClick={() => handleDelete(transaction.id)}
