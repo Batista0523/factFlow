@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const IndexPage = ({ transactions, onDeleteTransaction }) => {
+const IndexPage = ({ transactions }) => {
   const total = transactions.reduce(
     (total, transaction) => total + parseFloat(transaction.amount),
     0
@@ -15,10 +15,6 @@ const IndexPage = ({ transactions, onDeleteTransaction }) => {
     } else {
       return "bg-danger";
     }
-  };
-
-  const handleDelete = (id) => {
-    onDeleteTransaction(id);
   };
 
   return (
@@ -45,14 +41,6 @@ const IndexPage = ({ transactions, onDeleteTransaction }) => {
                     >
                       View Details
                     </Link>
-                    <div>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => handleDelete(transaction.id)}
-                      >
-                        Delete
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
