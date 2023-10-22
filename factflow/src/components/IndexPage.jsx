@@ -16,7 +16,6 @@ const IndexPage = ({ transactions }) => {
       return "bg-danger";
     }
   };
-
   return (
     <div className="container mt-4">
       <h1>Your Fact Flow</h1>
@@ -30,7 +29,7 @@ const IndexPage = ({ transactions }) => {
       {transactions.length > 0 ? (
         <div className="row">
           {transactions.map((transaction) => (
-            <div className="col-md-4" key={transaction.id}>
+            <div className="col-12 col-md-4" key={transaction.id}>
               <div className="card mb-4">
                 <div className="card-body">
                   <h5 className="card-title">{transaction.item_name}</h5>
