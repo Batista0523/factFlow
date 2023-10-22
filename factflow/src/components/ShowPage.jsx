@@ -9,7 +9,7 @@ const ShowPage = ({ transactions, onDeleteTransaction }) => {
     return (
       <div className="container mt-4">
         <div className="alert alert-danger">Transaction not found.</div>
-        <Link to="/" className="btn btn-primary">
+        <Link to="/index" className="btn btn-primary">
           Back to Index
         </Link>
       </div>
