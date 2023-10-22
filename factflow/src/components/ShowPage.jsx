@@ -45,7 +45,7 @@ const ShowPage = ({ transactions, onDeleteTransaction }) => {
           </div>
         </div>
       </div>
-      <Link to="/" className="btn btn-primary mt-3">
+      <Link to="/index" className="btn btn-primary mt-3">
         Back to Index
       </Link>
     </div>

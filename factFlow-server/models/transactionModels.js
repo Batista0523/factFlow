@@ -1,9 +1,9 @@
 const transactions = [
   {
     id: "1",
-    item_name: "Income",
+    item_name: "Salary",
     date: "10-17-2023",
-    amount: 40,
+    amount: 400,
     from: "Employer",
     category: "Income",
     income: true,
@@ -13,7 +13,7 @@ const transactions = [
     id: "2",
     item_name: "Grocery",
     date: "10-22-2023",
-    amount: 80,
+    amount: 85,
     from: "Grocery Store",
     category: "Food",
     income: false,
@@ -26,6 +26,7 @@ const transactions = [
     from: "Shell Gas Station",
     category: "Gas",
     income: false,
+  
   },
 
   {

@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import IndexPage from "./components/IndexPage";
 import ShowPage from "./components/ShowPage";
 import EditPage from "./components/EditPage";
+import Home from "./components/Home";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -111,6 +112,7 @@ function App() {
         <Router>
           <NavBar />
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route
               path="/edit-form/:id"
               element={
@@ -122,9 +124,10 @@ function App() {
               }
             />
             <Route
-              path="/"
+              path="/index"
               element={<IndexPage transactions={transactions} />}
             />
+
             <Route
               path="/create-resource"
               element={
@@ -134,6 +137,7 @@ function App() {
                 />
               }
             />
+
             <Route
               path="/show/:id"
               element={
