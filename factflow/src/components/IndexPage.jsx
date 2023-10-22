@@ -34,6 +34,8 @@ const IndexPage = ({ transactions }) => {
               <div className="card mb-4">
                 <div className="card-body">
                   <h5 className="card-title">{transaction.item_name}</h5>
+                  <p className="card-title">{transaction.date}</p>
+                  <p className="card-title">{transaction.category}</p>
                   <div className="d-flex justify-content-between align-items-center">
                     <Link
                       to={`/show/${transaction.id}`}

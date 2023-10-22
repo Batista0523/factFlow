@@ -8,7 +8,7 @@ const CreatePage = ({ createTransaction, updateTotals }) => {
   const [from, setFrom] = useState("");
   const [amount, setAmount] = useState("");
   const [income, setIncome] = useState(false);
-
+ 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
