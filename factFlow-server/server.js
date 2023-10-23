@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://cool-tanuki-b64142.netlify.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 }));
 
