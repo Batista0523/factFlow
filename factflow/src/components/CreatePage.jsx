@@ -31,7 +31,14 @@ const CreatePage = ({ createTransaction, updateTotals }) => {
     setAmount("");
     setIncome(false);
   };
-
+const reset = () => {
+  setItemName("");
+    setDate("");
+    setCategory("");
+    setFrom("");
+    setAmount("");
+    setIncome(false);
+}
   return (
     <div className="container mt-4 border p-4">
       <h1>Your Fact Flow</h1>
@@ -130,7 +137,7 @@ const CreatePage = ({ createTransaction, updateTotals }) => {
             </div>
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button onClick={reset} type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>
