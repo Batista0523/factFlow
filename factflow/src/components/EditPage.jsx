@@ -37,7 +37,7 @@ const EditPage = ({ transactions, onUpdateTransaction, history }) => {
   const handleUpdate = () => {
     onUpdateTransaction(id, editedTransaction);
   
-    // Clear the input fields by resetting 'editedTransaction'
+ 
     setEditedTransaction({
       id: id,
       item_name: "",
@@ -154,7 +154,7 @@ const EditPage = ({ transactions, onUpdateTransaction, history }) => {
           </div>
         </div>
 
-        <button   type="submit" className="btn btn-primary">
+        <button onClick={handleUpdate}  type="submit" className="btn btn-primary">
           Update Transaction
         </button>
       </form>
