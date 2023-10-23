@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { Link } from "react-router-dom";
 const CreatePage = ({ createTransaction, updateTotals }) => {
   const [itemName, setItemName] = useState("");
   const [date, setDate] = useState("");
@@ -8,7 +8,7 @@ const CreatePage = ({ createTransaction, updateTotals }) => {
   const [from, setFrom] = useState("");
   const [amount, setAmount] = useState("");
   const [income, setIncome] = useState(false);
- 
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -31,14 +31,14 @@ const CreatePage = ({ createTransaction, updateTotals }) => {
     setAmount("");
     setIncome(false);
   };
-const reset = () => {
-  setItemName("");
+  const reset = () => {
+    setItemName("");
     setDate("");
     setCategory("");
     setFrom("");
     setAmount("");
     setIncome(false);
-}
+  };
   return (
     <div className="container mt-4 border p-4">
       <h1>Your Fact Flow</h1>
@@ -137,9 +137,18 @@ const reset = () => {
             </div>
           </div>
         </div>
-        <button onClick={reset} type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <div className="row">
+          <div className="col-md-6">
+            <button onClick={reset} type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+          <div className="col-md-6">
+            <Link to="/index" className="btn btn-primary">
+              Back to Index
+            </Link>
+          </div>
+        </div>
       </form>
     </div>
   );
