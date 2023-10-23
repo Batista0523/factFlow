@@ -26,7 +26,7 @@ const EditPage = ({ transactions, onUpdateTransaction, history }) => {
     date: transactionToEdit.date,
     from: transactionToEdit.from,
     income: transactionToEdit.income,
-    category: transactionToEdit.category
+    category: transactionToEdit.category,
   });
 
   const handleInputChange = (e) => {
@@ -36,8 +36,7 @@ const EditPage = ({ transactions, onUpdateTransaction, history }) => {
 
   const handleUpdate = () => {
     onUpdateTransaction(id, editedTransaction);
-  
- 
+
     setEditedTransaction({
       id: id,
       item_name: "",
@@ -47,10 +46,9 @@ const EditPage = ({ transactions, onUpdateTransaction, history }) => {
       category: "",
       income: false,
     });
-    
+
     history.push(`/show/${id}`);
   };
- 
 
   return (
     <div className="container mt-4 border p-4">
@@ -124,7 +122,7 @@ const EditPage = ({ transactions, onUpdateTransaction, history }) => {
           <div className="col-md-6">
             <div className="mb-3">
               <label htmlFor="category" className="form-label">
-                 New Category:
+                New Category:
                 <input
                   type="text"
                   className="form-control"
@@ -154,9 +152,19 @@ const EditPage = ({ transactions, onUpdateTransaction, history }) => {
           </div>
         </div>
 
-        <button onClick={handleUpdate}  type="submit" className="btn btn-primary">
+        <button
+          onClick={handleUpdate}
+          type="submit"
+          className="btn btn-primary"
+        >
           Update Transaction
         </button>
+        <div className="row"></div>
+        <div className="col-md-6">
+          <Link to="/index" className="btn btn-primary">
+            Back to Index
+          </Link>
+        </div>
       </form>
     </div>
   );

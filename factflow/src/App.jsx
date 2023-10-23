@@ -9,7 +9,6 @@ import Home from "./components/Home";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
-
   const fetchTransactions = () => {
     const apiUrl = "http://localhost:3000/transactions";
     fetch(apiUrl)
@@ -127,7 +126,6 @@ function App() {
               path="/index"
               element={<IndexPage transactions={transactions} />}
             />
-
             <Route
               path="/create-resource"
               element={
@@ -137,7 +135,6 @@ function App() {
                 />
               }
             />
-
             <Route
               path="/show/:id"
               element={
