@@ -22,7 +22,7 @@ const transactions = [
     id: "3",
     item_name: "Shell",
     date: "10-25-2023",
-    amount: 45,
+    amount: 65,
     from: "Shell Gas Station",
     category: "Gas",
     income: false,
